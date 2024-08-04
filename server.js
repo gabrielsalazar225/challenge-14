@@ -7,7 +7,7 @@ const sequelize = require('./config/connection');
 
 // const model = require('./models');
 
-// const routes = require('./controlles');
+const routes = require('./controlles');
 
 app.use(session({
     secret: 'your_secret_key_here',
@@ -18,7 +18,7 @@ app.use(session({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// app.use(routes);
+app.use(routes);
 
 sequelize.sync({force: true}).then(()=>
 app.listen(PORT, ()=> {

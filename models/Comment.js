@@ -13,8 +13,23 @@ Comment.init ({
     content: {
         type: DataTypes.STRING,
         allowNull: false
-    }
-},
+    },
+    userId: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'user',
+            key: 'id',
+        },
+    },
+    
+        postId: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'post',
+                key: 'id',
+            },
+        },
+    },
 {
     sequelize,
     freezeTableName: true,
