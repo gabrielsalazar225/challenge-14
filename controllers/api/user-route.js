@@ -6,7 +6,6 @@ router.post('/signup', async (req,res) => {
     try {
         const dbUserData = await User.create({
             username: req.body.username,
-            email: req.body.email,
             password: req.body.password,
         });
         res.status(201).json(dbUserData);
@@ -32,8 +31,8 @@ router.get ('/home', (req,res) => {
   
 });
 
-router.get ('/signin', (req,res) => {
-  res.render('signin', {
+router.get ('/signup', (req,res) => {
+  res.render('signup', {
     layot: 'main',
     currentPath: req.path
   })
